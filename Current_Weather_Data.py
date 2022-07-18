@@ -1,9 +1,9 @@
 import requests 
+from myapi import user_api #here I have imported my api key from another files
 
-user_api = '46cfb9b8f4291b3fd93dabed39a1c759'
 location = input("Enter the city name: ").upper()
 
-complete_api_link = "https://api.openweax`thermap.org/data/2.5/weather?q="+location+"&appid="+user_api
+complete_api_link = "https://api.openweaxthermap.org/data/2.5/weather?q="+location+"&appid="+user_api
 
 api_link = requests.get(complete_api_link) 
 api_data = api_link.json() 

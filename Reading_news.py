@@ -1,12 +1,15 @@
 from unittest import result
 import requests
 from win32com.client import Dispatch
+from myapi import news_api #I have imported my api from another file
 
 def speak(str):
     speak = Dispatch("SAPI.SpVoice")
     speak.Speak(str)
 
-data = requests.get("https://newsapi.org/v2/top-headlines?country=in&apiKey=fa984c183c7342bf9982e17c61c8e341")
+url_link = f"https://newsapi.org/v2/top-headlines?country=in&apiKey={news_api}"
+
+data = requests.get(url_link)
 
 result = data.json()
 print()
